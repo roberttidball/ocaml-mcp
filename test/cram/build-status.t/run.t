@@ -16,9 +16,12 @@ Create a simple dune project:
 
 Start dune RPC and MCP server:
 
-  $ dune build --watch --root . &
-  Success, waiting for filesystem changes...
+  $ mkdir -p _build
+  $ dune build --watch --root . > _build/dune-watch.log 2>&1 &
   $ DUNE_PID=$!
+  $ for attempt in $(seq 1 100); do grep -q 'Success, waiting for filesystem changes' _build/dune-watch.log && break; sleep 0.1; done
+  $ grep -m 1 'Success, waiting for filesystem changes' _build/dune-watch.log
+  Success, waiting for filesystem changes...
   $ ocaml-mcp-server --pipe test.sock -vv &
   ocaml-mcp-server: [INFO] Listening on unix:test.sock
   ocaml-mcp-server: [INFO] Server ready, waiting for connections...

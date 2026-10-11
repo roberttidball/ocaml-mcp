@@ -13,9 +13,11 @@ depends: [
   "ocaml"
   "eio"
   "mcp"
+  "jsont" {>= "0.4.0"}
   "http"
   "cohttp-eio"
-  "eio_main" {with-test}
+  "alcotest" {with-test}
+  "eio_main"
   "odoc" {with-doc}
 ]
 build: [

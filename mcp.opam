@@ -16,8 +16,9 @@ depends: [
   "jsonrpc"
   "jsonschema"
   "yojson"
-  "ppx_deriving_yojson"
-  "logs"
+  "jsont" {>= "0.4.0"}
+  "bytesrw"
+  "base64"
   "re"
   "alcotest" {with-test}
   "odoc" {with-doc}
