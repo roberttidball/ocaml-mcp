@@ -17,7 +17,7 @@ depends: [
   "http"
   "cohttp-eio"
   "alcotest" {with-test}
-  "eio_main"
+  "eio_main" {with-test}
   "odoc" {with-doc}
 ]
 build: [

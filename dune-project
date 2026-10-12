@@ -28,7 +28,7 @@
   yojson
   (jsont (>= 0.4.0))
   bytesrw
-  base64
+  logs
   re
   (alcotest :with-test))
  (tags
@@ -47,7 +47,7 @@
   http
   cohttp-eio
   (alcotest :with-test)
-  eio_main))
+  (eio_main :with-test)))
 
 (package
  (name ocaml-mcp-server)
